@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindBridge — EdTech AI Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #5b6dff;
+      --accent: #00c2a8;
+      --dark: #0b0c10;
+      --light: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #f4f7ff, #ffffff);
+      color: var(--dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    main {
+      flex: 1;
+      padding: 3rem 2rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+    .buttons {
+      margin-top: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      margin: 0.5rem;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #3f51e8;
+    }
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+    footer {
+      background: #f3f3f3;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🧠 MindBridge</h1>
+    <p>AI-платформа, которая помогает студентам раскрывать потенциал через игру, аналитику и искусственный интеллект.</p>
+    <div class="buttons">
+      <a href="./docs/1_vision_mission.md" class="btn btn-primary">📘 Документация</a>
+      <a href="#about" class="btn btn-outline">О проекте</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>🎯 Миссия</h2>
+      <p>MindBridge помогает студентам понимать себя и учиться по-своему. 
+      Через игровые сценарии и AI-анализ поведенческих данных мы формируем уверенность, креативность и реальную вовлечённость в образование.</p>
+    </section>
+
+    <section id="tech">
+      <h2>⚙️ Технологии</h2>
+      <p>Платформа построена на современном технологическом стеке:</p>
+      <ul style="list-style:none; padding:0;">
+        <li>🟦 Go — надёжный backend</li>
+        <li>🧠 Python (AI & ML) — поведенческая аналитика</li>
+        <li>⚡ React / Next.js — интерфейс</li>
+        <li>🗄 PostgreSQL + Redis — хранение данных</li>
+      </ul>
+    </section>
+
+    <section id="impact">
+      <h2>🌍 Влияние</h2>
+      <p>MindBridge создаёт инклюзивную среду обучения, где каждый студент может учиться без страха и сравнения.
+      Мы объединяем преподавателей, студентов и родителей через данные, которые помогают понимать, а не оценивать.</p>
+    </section>
+
+    <div class="buttons">
+      <a href="./docs/2_product_hypothesis.md" class="btn btn-primary">Подробнее о продукте</a>
+      <a href="https://github.com/Sifiro1/mindbridge" class="btn btn-outline">Исходный код</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 MindBridge | Создано с 💙 на Go и AI |
+    <a href="https://github.com/Sifiro1/mindbridge">GitHub</a>
+  </footer>
+</body>
+</html>
