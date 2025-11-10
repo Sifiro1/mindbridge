@@ -2,190 +2,177 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> MindBridge — EdTech AI Platform</title>
-  <link rel="icon" href="https://emojiapi.dev/api/v1/brain/512.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🧠 MindBridge — EdTech AI Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary: #4b6fff;
-      --accent: #00c2a8;
-      --dark: #0b0c10;
-      --light: #ffffff;
-      --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+      --primary: #1e6bb8;
+      --accent: #28a745;
+      --text: #24292e;
+      --light-bg: #ffffff;
+    }
+    * {
+      scroll-behavior: smooth;
     }
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #f8faff, #ffffff);
-      color: var(--dark);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    header {
-      background: var(--gradient);
-      color: white;
-      padding: 4rem 2rem 3rem;
-      text-align: center;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-      position: relative;
-    }
-    header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: var(--accent);
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0.5rem 0;
-      font-weight: 800;
-    }
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.95;
-      max-width: 700px;
-      margin: 0.5rem auto 2rem;
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text);
+      background: var(--light-bg);
       line-height: 1.6;
     }
-    .buttons {
-      margin-top: 2rem;
+
+    /* 🔹 Навигация */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(120deg, var(--primary), var(--accent));
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
+      gap: 2rem;
+      padding: 0.8rem 1rem;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      opacity: 0.9;
+    }
+
+    /* 🔹 Хедер */
+    header {
+      background: linear-gradient(120deg, var(--primary), var(--accent));
+      color: #fff;
+      text-align: center;
+      padding: 6rem 2rem 3rem;
+      margin-top: 3rem; /* отступ из-за фиксированного меню */
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.6rem;
+      font-weight: 700;
+    }
+    header p {
+      max-width: 700px;
+      margin: 1rem auto;
+      font-size: 1.1rem;
+      opacity: 0.95;
     }
     .btn {
       display: inline-block;
-      padding: 0.9rem 1.8rem;
-      border-radius: 10px;
+      background: #fff;
+      color: var(--primary);
+      padding: 0.7rem 1.4rem;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s ease;
-      font-size: 1rem;
+      margin: 1rem 0.4rem;
+      transition: 0.3s;
     }
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-      box-shadow: 0 4px 12px rgba(0, 194, 168, 0.4);
+    .btn:hover {
+      background: #e6e6e6;
     }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 194, 168, 0.6);
-    }
-    .btn-outline {
-      border: 2px solid white;
-      color: white;
-      background: transparent;
-    }
-    .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
+
+    /* 🔹 Контент */
     main {
-      flex: 1;
-      padding: 3rem 2rem;
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
-      text-align: center;
-      line-height: 1.8;
-    }
-    section {
-      margin-bottom: 3rem;
+      padding: 2.5rem 1.5rem;
     }
     h2 {
       color: var(--primary);
-      font-weight: 800;
-      margin-bottom: 0.8rem;
+      border-bottom: 2px solid #eaecef;
+      padding-bottom: 0.3rem;
+      margin-top: 2.5rem;
     }
     ul {
-      text-align: left;
-      display: inline-block;
-      margin: 1rem auto;
-      padding-left: 1.5rem;
+      padding-left: 1.2rem;
     }
-    li {
-      margin: 0.4rem 0;
-      font-size: 1.05rem;
-    }
+
+    /* 🔹 Карточки команды */
     .team {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
     }
     .card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 1.2rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       transition: 0.3s;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     .card img {
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      margin-bottom: 1rem;
+      margin-bottom: 0.7rem;
     }
-    .card h3 {
-      margin: 0.3rem 0;
-      color: var(--primary);
-      font-weight: 700;
-    }
-    .card p {
+
+    /* 🔹 Футер */
+    footer {
+      background: #f6f8fa;
+      text-align: center;
+      padding: 1.2rem;
       font-size: 0.95rem;
       color: #555;
-    }
-    footer {
-      background: var(--gradient);
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.95rem;
+      border-top: 1px solid #eaecef;
     }
     footer a {
-      color: #fff;
-      font-weight: 600;
+      color: var(--primary);
       text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
+  <!-- 🔹 Навигация -->
+  <nav>
+    <a href="#mission">Миссия</a>
+    <a href="#tech">Технологии</a>
+    <a href="#team">Команда</a>
+    <a href="#partners">Партнёры</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+
+  <!-- 🔹 Хедер -->
   <header>
-    <h1> MindBridge</h1>
+    <h1>MindBridge — EdTech AI Platform</h1>
     <p>AI-платформа, которая помогает студентам раскрывать потенциал через игру, аналитику и искусственный интеллект.</p>
-    <div class="buttons">
-      <a href="./docs/1_vision_mission.md" class="btn btn-primary"> Документация</a>
-      <a href="#about" class="btn btn-outline">О проекте</a>
-    </div>
+    <a href="https://github.com/Sifiro1/mindbridge" class="btn">View on GitHub</a>
   </header>
 
+  <!-- 🔹 Контент -->
   <main>
-    <section id="about">
-      <h2> Миссия</h2>
+    <section id="mission">
+      <h2>🎯 Миссия</h2>
       <p>MindBridge помогает студентам понимать себя и учиться по-своему.  
-      Через игровые сценарии и AI-анализ мы развиваем уверенность, креативность и реальную вовлечённость в обучение.</p>
+      Через игровые сценарии и AI-анализ мы развиваем уверенность, креативность и вовлечённость в обучение.</p>
     </section>
 
     <section id="tech">
-      <h2> Технологии</h2>
+      <h2>⚙️ Технологии</h2>
       <ul>
-        <li> Go — надёжный и быстрый backend</li>
-        <li> Python (FastAPI, ML) — анализ данных и прогнозирование</li>
-        <li> React / Next.js — интуитивный интерфейс</li>
-        <li> PostgreSQL + Redis — хранение и обработка данных</li>
-        <li> Kafka / NATS — обмен игровыми событиями</li>
+        <li>Go — надёжный backend</li>
+        <li>Python (FastAPI, ML) — поведенческая аналитика</li>
+        <li>React / Next.js — интерфейс</li>
+        <li>PostgreSQL + Redis — хранение данных</li>
+        <li>Kafka / NATS — обмен событиями</li>
       </ul>
     </section>
 
@@ -195,42 +182,39 @@
         <div class="card">
           <img src="https://cdn-icons-png.flaticon.com/512/4140/4140037.png" alt="Founder" />
           <h3>GS SG</h3>
-          <p>Основатель проекта MindBridge.  
-          Вдохновитель идеи соединения AI, геймификации и образования.</p>
+          <p>Основатель проекта MindBridge. Инициатор идеи объединить AI, геймификацию и образование.</p>
         </div>
-
         <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Developer" />
+          <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Dev" />
           <h3>AI Developer</h3>
-          <p>Разработка и интеграция моделей анализа поведения студентов.  
-          Специализация — Go и машинное обучение.</p>
+          <p>Интеграция моделей анализа поведения студентов. Go + машинное обучение.</p>
         </div>
-
         <div class="card">
           <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Education Expert" />
           <h3>Education Expert</h3>
-          <p>Консультант по педагогике и когнитивным стратегиям.  
-          Помогает адаптировать игровые сценарии под учебные программы.</p>
+          <p>Педагогический консультант, помогает адаптировать игровые сценарии под учебные цели.</p>
         </div>
       </div>
     </section>
 
-    <section id="impact">
-      <h2> Влияние</h2>
-      <p>MindBridge создаёт инклюзивную среду, где каждый студент может учиться без страха и давления.  
-      Мы объединяем преподавателей, студентов и родителей через данные, которые помогают понимать, а не оценивать.</p>
+    <section id="partners">
+      <h2>🤝 Для партнёров и акселераторов</h2>
+      <p>MindBridge открыт для сотрудничества с университетами, фондами и EdTech-компаниями.  
+      Мы создаём AI-инструменты для развития студентов и модернизации образовательных систем.</p>
+      <a href="#" class="btn">📄 Скачать Pitch Deck</a>
+      <a href="mailto:mindbridge.ai@gmail.com" class="btn">📬 Связаться с нами</a>
     </section>
 
-    <div class="buttons">
-      <a href="./docs/2_product_hypothesis.md" class="btn btn-primary">Подробнее о продукте</a>
-      <a href="https://github.com/Sifiro1/mindbridge" class="btn btn-outline">Исходный код</a>
-    </div>
+    <section id="contact">
+      <h2>📞 Контакты</h2>
+      <p>Если вы хотите сотрудничать, задать вопрос или предложить идею, пишите нам:</p>
+      <p><a href="mailto:mindbridge.ai@gmail.com">mindbridge.ai@gmail.com</a></p>
+    </section>
   </main>
 
   <footer>
-    © 2025 MindBridge | Сделано с любовью на Go и AI |
-    <a href="https://github.com/Sifiro1/mindbridge">GitHub</a> |
-    <a href="mailto:mindbridge.ai@gmail.com">Контакты</a>
+    © 2025 MindBridge | Сделано с 💙 на Go и AI | 
+    <a href="https://github.com/Sifiro1/mindbridge">GitHub</a>
   </footer>
 </body>
 </html>
